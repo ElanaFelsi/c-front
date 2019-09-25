@@ -1,0 +1,3 @@
+cpp2c_encapsulation.o: cpp2c_encapsulation.c
+main.o: main.c
+cpp2c_encapsulation_defs.o: cpp2c_encapsulation_defs.c
