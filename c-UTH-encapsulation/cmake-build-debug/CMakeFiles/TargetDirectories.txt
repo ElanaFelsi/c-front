@@ -1,3 +1,0 @@
-/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cmake-build-debug/CMakeFiles/c_UTH.dir
-/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cmake-build-debug/CMakeFiles/edit_cache.dir
