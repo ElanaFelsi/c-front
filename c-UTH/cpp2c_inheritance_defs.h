@@ -80,6 +80,7 @@ typedef struct PhysicalBox
 void __cPHBOX__pPhBx_d_d_d(PhysicalBox *this, double l, double w, double h);
 void __cPHBOX__pPhBx_d_d_d_EnT(PhysicalBox *this, double l, double w, double h, enum Types t);
 void __cPHBOX__pPhBx_EnT(PhysicalBox *this, enum Types t);
+void __ccPHBOX__pPhBx_KPhBx(PhysicalBox *const this, const PhysicalBox const *other);
 
 void __dPHBOX__pPhBx(PhysicalBox *this);
 

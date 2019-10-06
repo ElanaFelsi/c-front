@@ -63,6 +63,13 @@ void __cPHBOX__pPhBx_EnT(PhysicalBox *this, enum Types t)
     __printp__KpPhBxK(this);
 }
 
+void __ccPHBOX__pPhBx_KPhBx(PhysicalBox *const this, const PhysicalBox const *other)
+{
+    __ccBOX__pBx_KpBx(&this->box, &other->box);
+    this->material = other->material;
+    __printw__KpWtBxK(this);
+}
+
 /*
 PhysicalBox::~PhysicalBox()
 {
@@ -118,6 +125,7 @@ printw();
 }*/
 void __ccWTBOX__pWtBx_KpWtBx(WeightBox *const this, const WeightBox const *other)
 {
+    __ccBOX__pBx_KpBx(&this->box, &this->box);
     this->weight = other->weight;
     __printw__KpWtBxK(this);
 }
