@@ -6,15 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_encapsulation.c
-stdio.h
--
-cpp2c_encapsulation_defs.h
-/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_encapsulation_defs.h
-
 /home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_encapsulation_defs.h
 stdlib.h
 -
 stdbool.h
 -
+
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_inheritance.c
+cstdio
+-
+cpp2c_inheritance_defs.h
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_inheritance_defs.h
+
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_inheritance_defs.c
+stdio.h
+-
+cpp2c_inheritance_defs.h
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_inheritance_defs.h
+
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_inheritance_defs.h
+stdio.h
+-
+cpp2c_encapsulation_defs.h
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_encapsulation_defs.h
 

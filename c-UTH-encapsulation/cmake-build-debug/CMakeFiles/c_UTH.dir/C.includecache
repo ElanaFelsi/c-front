@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_encapsulation.c
+stdio.h
+-
+stdbool.h
+-
+cpp2c_encapsulation_defs.h
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_encapsulation_defs.h
+
+/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_encapsulation_defs.h
+stdlib.h
+-
+stdbool.h
+-
+
