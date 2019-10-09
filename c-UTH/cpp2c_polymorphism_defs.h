@@ -128,12 +128,13 @@ typedef struct
 /* PrePostFixer Defs */
 
 void __cPPF__pPPF_Kcp_Kcp(PrePostFixer *this, const char* prefix, const char* postfix);
+void __ccPPF__pPPF_KpPPFp(PrePostFixer *this, const PrePostFixer *other);
 void __dPPF__pPPF(PrePostFixer *this);
 
 void __pvPrint__KPPFK_Kcp(const PrePostFixer *const this, const char* text);
-void __pvPrint__KPPFK_Kcp_Kl_Kc(const PrePostFixer *const this, const long num, const char symbol /*= '\0'*/);
+void __pvPrint__KPPFK_Kl_Kc(const PrePostFixer *const this, const long num, const char symbol /*= '\0'*/);
 
-char __getDefaultSymbol__();
+char __getDefaultSymbolPPF__();
 
 /*
 inline const char* PrePostFixer::getPrefix() const
@@ -179,23 +180,42 @@ printf("%s%c%ld%s\n", pre, symbol, num, post);
 
 /*
 class PrePostDollarFixer: public PrePostFixer
-        {
-                protected:
-                static const char DEFAULT_SYMBOL = '$';
+{
+protected:
+    static const char DEFAULT_SYMBOL = '$';
 
-                public:
-                PrePostDollarFixer(const char* prefix, const char* postfix);
-                PrePostDollarFixer(const PrePostDollarFixer& other);
-                ~PrePostDollarFixer();
+public:
+    PrePostDollarFixer(const char* prefix, const char* postfix);
+    PrePostDollarFixer(const PrePostDollarFixer& other);
+    ~PrePostDollarFixer();
 
-                void print(int num, char symbol = DEFAULT_SYMBOL) const;
-                void print(long num, char symbol = DEFAULT_SYMBOL) const;
-                void print(double num, char symbol = DEFAULT_SYMBOL) const;
-                char getDefaultSymbol() const;
-        };
+    void print(int num, char symbol = DEFAULT_SYMBOL) const;
+    void print(long num, char symbol = DEFAULT_SYMBOL) const;
+    void print(double num, char symbol = DEFAULT_SYMBOL) const;
+    char getDefaultSymbol() const;
+};
+*/
 
-//// PrePostDollarFixer Defs ////////////
+const char DEFAULT_SYMBOL = '$';
+typedef struct
+{
+    PrePostFixer prePostFixer;
+}PrePostDollarFixer;
 
+
+void __cPPDF__pPPDF_Kc_Kc(PrePostDollarFixer *this, const char* prefix, const char* postfix);
+void __ccPPDF__pPPDF_KPPDF(PrePostDollarFixer *this, const PrePostDollarFixer *other);
+void __dPPDF__pPPDF(PrePostDollarFixer *this);
+
+void __print__KpPPDFK_Ki_Kc(const PrePostDollarFixer *const this, const int num, const char symbol /*= DEFAULT_SYMBOL*/);
+void __print__KpPPDFK_Kl_Kc(const PrePostDollarFixer *const this, const long num, const char symbol /*= DEFAULT_SYMBOL*/);
+void __print__KpPPDFK_Kd_Kc(const PrePostDollarFixer *const this, const double num, const char symbol /*= DEFAULT_SYMBOL*/);
+char __getDefaultSymbolPPDF__();
+
+
+/* PrePostDollarFixer Defs */
+
+/*
 inline char PrePostDollarFixer::getDefaultSymbol() const
 {
 return DEFAULT_SYMBOL;
@@ -313,5 +333,6 @@ inline void Multiplier::setTimes(int t)
 }
 
 */
+
 
 #endif //C_UTH_CPP2C_POLYMORPHISM_DEFS_H

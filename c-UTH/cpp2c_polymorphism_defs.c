@@ -2,7 +2,8 @@
 #include <stdlib.h>
 vt TF_vptr = {__dTEXTFORMATOR__pTF};
 vt DTF_vptr = {__dDEFAULTEXTFORMATOR__pDTF, __pvPrint__KDTFK_Kcp};
-vt PPF_vptr = {__dPPF__pPPF, __pvPrint__KPPFK_Kcp, __pvPrint__KPPFK_Kcp_Kl_Kc, __getDefaultSymbol__};
+vt PPF_vptr = {__dPPF__pPPF, __pvPrint__KPPFK_Kcp, __pvPrint__KPPFK_Kl_Kc, __getDefaultSymbolPPF__};
+vt PPDF_vptr = {__dPPDF__pPPDF, __pvPrint__KPPFK_Kcp, __print__KpPPDFK_Kl_Kc, __getDefaultSymbolPPDF__};
 
 void __dTEXTFORMATOR__pTF(TextFormatter *this) {}
 
@@ -104,6 +105,15 @@ void __cPPF__pPPF_Kcp_Kcp(PrePostFixer *this, const char* prefix, const char* po
     this->pre = prefix;
     this->post = postfix;
 }
+
+void __ccPPF__pPPF_KpPPFp(PrePostFixer *this, const PrePostFixer *other)
+{
+    __ccDEFAULTEXTFORMATOR__pDTF_KpDTF(&this->defaultTextFormatter, &other->defaultTextFormatter);
+    this->pre = other->pre;
+    this->post = other->post;
+}
+
+
 /*
 PrePostFixer::~PrePostFixer()
 {
@@ -130,7 +140,7 @@ void __pvPrint__KPPFK_Kcp(const PrePostFixer *const this, const char* text)
     printf("%s%s%s\n", this->pre, text, this->post);
 }
 
-void __pvPrint__KPPFK_Kcp_Kl_Kc(const PrePostFixer *const this, const long num, const char symbol /*= '\0'*/)
+void __pvPrint__KPPFK_Kl_Kc(const PrePostFixer *const this, const long num, const char symbol /*= '\0'*/)
 {
     printf("%-60s | ", "[PrePostFixer::print(long, char)]");
     printf("-->\n");
@@ -146,30 +156,54 @@ void __pvPrint__KPPFK_Kcp_Kl_Kc(const PrePostFixer *const this, const long num, 
     }
 }
 
-char __getDefaultSymbol__()
+char __getDefaultSymbolPPF__()
 {
     return '\0';
 }
-/*
-//// PrePostDollarFixer Defs ////////////
 
-PrePostDollarFixer::PrePostDollarFixer(const char* prefix, const char* postfix)
+/* PrePostDollarFixer Defs */
+
+/*PrePostDollarFixer::PrePostDollarFixer(const char* prefix, const char* postfix)
 :   PrePostFixer(prefix, postfix)
 {
 printf("--- PrePostDollarFixer CTOR: \"%s\"...\"%s\"\n", getPrefix(), getPostfix());
 }
+*/
+void __cPPDF__pPPDF_Kc_Kc(PrePostDollarFixer *this, const char* prefix, const char* postfix)
+{
+    __cPPF__pPPF_Kcp_Kcp(&this->prePostFixer, prefix, postfix);
+    this->prePostFixer.defaultTextFormatter.textFormatter.TF_vptr = PPDF_vptr;
+    printf("--- PrePostDollarFixer CTOR: \"%s\"...\"%s\"\n", this->prePostFixer.pre, this->prePostFixer.post);
+}
 
+/*
 PrePostDollarFixer::PrePostDollarFixer(const PrePostDollarFixer& other)
 :   PrePostFixer(other)
         {
                 printf("--- PrePostDollarFixer Copy CTOR: \"%s\"...\"%s\"\n", getPrefix(), getPostfix());
         }
+*/
+void __ccPPDF__pPPDF_KPPDF(PrePostDollarFixer *this, const PrePostDollarFixer *other)
+{
+    __ccPPF__pPPF_KpPPFp(&this->prePostFixer, &other->prePostFixer);
+    printf("--- PrePostDollarFixer Copy CTOR: \"%s\"...\"%s\"\n", this->prePostFixer.pre, other->prePostFixer.post);
 
+}
+
+/*
 PrePostDollarFixer::~PrePostDollarFixer()
 {
     printf("--- PrePostDollarFixer DTOR: \"%s\"...\"%s\"\n", getPrefix(), getPostfix());
 }
+*/
+void __dPPDF__pPPDF(PrePostDollarFixer *this)
+{
+    printf("--- PrePostDollarFixer DTOR: \"%s\"...\"%s\"\n", this->prePostFixer.pre, this->prePostFixer.post);
+    this->prePostFixer.defaultTextFormatter.textFormatter.TF_vptr = PPF_vptr;
+    __dPPF__pPPF(&this->prePostFixer);
+}
 
+/*
 void PrePostDollarFixer::print(int num, char symbol) const
 {
 printFunc("[PrePostDollarFixer::print(int, char)]");
@@ -177,7 +211,15 @@ printf("-->\n");
 
 print(long(num), symbol);
 }
+*/
+void __print__KpPPDFK_Ki_Kc(const PrePostDollarFixer *const this, const int num, const char symbol /*= DEFAULT_SYMBOL*/)
+{
+    printf("%-60s | ", "[PrePostDollarFixer::print(int, char)]");
+    printf("-->\n");
+    __print__KpPPDFK_Kl_Kc(this, (long)num, symbol);
+}
 
+/*
 void PrePostDollarFixer::print(long num, char symbol) const
 {
 printFunc("[PrePostDollarFixer::print(long, char)]");
@@ -185,16 +227,36 @@ printf("-->\n");
 
 PrePostFixer::print(num, symbol);
 }
+*/
+void __print__KpPPDFK_Kl_Kc(const PrePostDollarFixer *const this, const long num, const char symbol)
+{
+    printf("%-60s | ", "[PrePostDollarFixer::print(long, char)]");
+    printf("-->\n");
 
+    __pvPrint__KPPFK_Kl_Kc(&this->prePostFixer, num, symbol);
+}
+
+/*
 void PrePostDollarFixer::print(double num, char symbol) const
 {
 printFunc("[PrePostDollarFixer::print(double, char)]");
 printf("%s%c%f%s\n", getPrefix(), symbol, num, getPostfix());
 }
+*/
+void __print__KpPPDFK_Kd_Kc(const PrePostDollarFixer *const this, const double num, const char symbol)
+{
+    printf("%-60s | ", "[PrePostDollarFixer::print(double, char)]");
+    printf("%s%c%f%s\n", this->prePostFixer.pre, symbol, num, this->prePostFixer.post);
+}
+
+char __getDefaultSymbolPPDF__()
+{
+    return '$';
+}
 
 
-//// PrePostHashFixer Defs ////////////
-
+/* PrePostHashFixer Defs */
+/*
 PrePostHashFixer::PrePostHashFixer(int prc)
 :   PrePostDollarFixer("===> ", " <===")
 ,   precision(prc)
