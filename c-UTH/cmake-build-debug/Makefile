@@ -231,6 +231,60 @@ cpp2c_inheritance_defs.c.s:
 	$(MAKE) -f CMakeFiles/c_UTH.dir/build.make CMakeFiles/c_UTH.dir/cpp2c_inheritance_defs.c.s
 .PHONY : cpp2c_inheritance_defs.c.s
 
+cpp2c_polymorphism.o: cpp2c_polymorphism.c.o
+
+.PHONY : cpp2c_polymorphism.o
+
+# target to build an object file
+cpp2c_polymorphism.c.o:
+	$(MAKE) -f CMakeFiles/c_UTH.dir/build.make CMakeFiles/c_UTH.dir/cpp2c_polymorphism.c.o
+.PHONY : cpp2c_polymorphism.c.o
+
+cpp2c_polymorphism.i: cpp2c_polymorphism.c.i
+
+.PHONY : cpp2c_polymorphism.i
+
+# target to preprocess a source file
+cpp2c_polymorphism.c.i:
+	$(MAKE) -f CMakeFiles/c_UTH.dir/build.make CMakeFiles/c_UTH.dir/cpp2c_polymorphism.c.i
+.PHONY : cpp2c_polymorphism.c.i
+
+cpp2c_polymorphism.s: cpp2c_polymorphism.c.s
+
+.PHONY : cpp2c_polymorphism.s
+
+# target to generate assembly for a file
+cpp2c_polymorphism.c.s:
+	$(MAKE) -f CMakeFiles/c_UTH.dir/build.make CMakeFiles/c_UTH.dir/cpp2c_polymorphism.c.s
+.PHONY : cpp2c_polymorphism.c.s
+
+cpp2c_polymorphism_defs.o: cpp2c_polymorphism_defs.c.o
+
+.PHONY : cpp2c_polymorphism_defs.o
+
+# target to build an object file
+cpp2c_polymorphism_defs.c.o:
+	$(MAKE) -f CMakeFiles/c_UTH.dir/build.make CMakeFiles/c_UTH.dir/cpp2c_polymorphism_defs.c.o
+.PHONY : cpp2c_polymorphism_defs.c.o
+
+cpp2c_polymorphism_defs.i: cpp2c_polymorphism_defs.c.i
+
+.PHONY : cpp2c_polymorphism_defs.i
+
+# target to preprocess a source file
+cpp2c_polymorphism_defs.c.i:
+	$(MAKE) -f CMakeFiles/c_UTH.dir/build.make CMakeFiles/c_UTH.dir/cpp2c_polymorphism_defs.c.i
+.PHONY : cpp2c_polymorphism_defs.c.i
+
+cpp2c_polymorphism_defs.s: cpp2c_polymorphism_defs.c.s
+
+.PHONY : cpp2c_polymorphism_defs.s
+
+# target to generate assembly for a file
+cpp2c_polymorphism_defs.c.s:
+	$(MAKE) -f CMakeFiles/c_UTH.dir/build.make CMakeFiles/c_UTH.dir/cpp2c_polymorphism_defs.c.s
+.PHONY : cpp2c_polymorphism_defs.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +306,12 @@ help:
 	@echo "... cpp2c_inheritance_defs.o"
 	@echo "... cpp2c_inheritance_defs.i"
 	@echo "... cpp2c_inheritance_defs.s"
+	@echo "... cpp2c_polymorphism.o"
+	@echo "... cpp2c_polymorphism.i"
+	@echo "... cpp2c_polymorphism.s"
+	@echo "... cpp2c_polymorphism_defs.o"
+	@echo "... cpp2c_polymorphism_defs.i"
+	@echo "... cpp2c_polymorphism_defs.s"
 .PHONY : help
 
 

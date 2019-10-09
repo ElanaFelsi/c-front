@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/c_UTH.dir/cpp2c_encapsulation.c.o"
   "CMakeFiles/c_UTH.dir/cpp2c_inheritance_defs.c.o"
   "CMakeFiles/c_UTH.dir/cpp2c_inheritance.c.o"
+  "CMakeFiles/c_UTH.dir/cpp2c_polymorphism_defs.c.o"
+  "CMakeFiles/c_UTH.dir/cpp2c_polymorphism.c.o"
   "c_UTH.pdb"
   "c_UTH"
 )

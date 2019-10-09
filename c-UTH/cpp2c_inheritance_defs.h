@@ -45,8 +45,9 @@ typedef struct Material_t/*: public Materials*/
     enum Types material;
 }Material_t;
 
-void __cMATERIAL_T__pMtrlt(Material_t *this);
+/* void __cMATERIAL_T__pMtrlt(Material_t *this); */
 void __cMATERIAL_T__pMtrlt_EnT(Material_t *this, enum Types mat);
+void __ccMATERIAL_T__pMtrlt_KpMtrlt(Material_t *const this, const Material_t const *other);
 
 const char* __name__pMtrlt(Material_t *this);
 

@@ -96,6 +96,15 @@
 		<Unit filename="/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_inheritance_defs.h">
 			<Option target="c_UTH"/>
 		</Unit>
+		<Unit filename="/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_polymorphism.c">
+			<Option target="c_UTH"/>
+		</Unit>
+		<Unit filename="/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_polymorphism_defs.c">
+			<Option target="c_UTH"/>
+		</Unit>
+		<Unit filename="/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/cpp2c_polymorphism_defs.h">
+			<Option target="c_UTH"/>
+		</Unit>
 		<Unit filename="/home/elana/BootCamp-HW/cpp/cpp-under-the-hood/cpp-uth-encapsulation-ElanaFelsi/c-UTH/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

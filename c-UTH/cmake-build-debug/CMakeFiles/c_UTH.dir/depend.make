@@ -15,3 +15,9 @@ CMakeFiles/c_UTH.dir/cpp2c_inheritance_defs.c.o: ../cpp2c_encapsulation_defs.h
 CMakeFiles/c_UTH.dir/cpp2c_inheritance_defs.c.o: ../cpp2c_inheritance_defs.c
 CMakeFiles/c_UTH.dir/cpp2c_inheritance_defs.c.o: ../cpp2c_inheritance_defs.h
 
+CMakeFiles/c_UTH.dir/cpp2c_polymorphism.c.o: ../cpp2c_polymorphism.c
+CMakeFiles/c_UTH.dir/cpp2c_polymorphism.c.o: ../cpp2c_polymorphism_defs.h
+
+CMakeFiles/c_UTH.dir/cpp2c_polymorphism_defs.c.o: ../cpp2c_polymorphism_defs.c
+CMakeFiles/c_UTH.dir/cpp2c_polymorphism_defs.c.o: ../cpp2c_polymorphism_defs.h
+

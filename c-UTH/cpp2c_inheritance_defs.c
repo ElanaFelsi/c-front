@@ -1,17 +1,24 @@
 #include <stdio.h>
 #include "cpp2c_inheritance_defs.h"
 
-/*  Materials  */
+/*  Materials_t  */
 
-void __cMATERIAL_T__pMtrlt(Material_t *this)
+/* Dont need default
+ void __cMATERIAL_T__pMtrlt(Material_t *this)
 {
     this->material = this->materials.Types = OTHER;
     printf("Material created, set to %s\n", __name__pMtrlt(this));
-}
+}*/
 void __cMATERIAL_T__pMtrlt_EnT(Material_t *this, enum Types mat)
 {
+    /* inline materials ctor */
     this->material = mat;
     printf("Material created, set to %s\n", __name__pMtrlt(this));
+}
+void __ccMATERIAL_T__pMtrlt_KpMtrlt(Material_t *const this, const Material_t const *other)
+{
+    this->material = other->material;
+    this->materials = other->materials;
 }
 
 const char* __name__pMtrlt(Material_t *this)
@@ -32,7 +39,7 @@ printp();
 void __cPHBOX__pPhBx_d_d_d(PhysicalBox *this, double l, double w, double h)
 {
     __cBOX__pBx_d_d_d(&this->box, l, w, h);
-
+    __cMATERIAL_T__pMtrlt_EnT(&this->material, OTHER);
     __printp__KpPhBxK(this);
 }
 
@@ -47,7 +54,7 @@ PhysicalBox::PhysicalBox(double l, double w, double h, Materials::Types t)
 void __cPHBOX__pPhBx_d_d_d_EnT(PhysicalBox *this, double l, double w, double h, enum Types t)
 {
     __cBOX__pBx_d_d_d(&this->box, l, w, h);
-    this->material.material = t;
+    __cMATERIAL_T__pMtrlt_EnT(&this->material, t);
     __printp__KpPhBxK(this);
 }
 
@@ -59,13 +66,15 @@ PhysicalBox::PhysicalBox(Materials::Types t)
         }*/
 void __cPHBOX__pPhBx_EnT(PhysicalBox *this, enum Types t)
 {
-    this->material.material = t;
+    __cBOX__pBx(&this->box);
+    __cMATERIAL_T__pMtrlt_EnT(&this->material, t);
     __printp__KpPhBxK(this);
 }
 
 void __ccPHBOX__pPhBx_KPhBx(PhysicalBox *const this, const PhysicalBox const *other)
 {
     __ccBOX__pBx_KpBx(&this->box, &other->box);
+    /*__ccMATERIAL_T__pMtrlt_KpMtrlt(&this->material, &other->material);*/
     this->material = other->material;
     __printw__KpWtBxK(this);
 }
@@ -78,6 +87,8 @@ PhysicalBox::~PhysicalBox()
 void __dPHBOX__pPhBx(PhysicalBox *this)
 {
     printf("PhysicalBox dtor, %f x %f x %f, %s; ", this->box.length, this->box.width, this->box.height, __name__pMtrlt(&this->material));
+    /* inline dtor for material */
+    __dBOX__pBx(&this->box);
 }
 
 /*
